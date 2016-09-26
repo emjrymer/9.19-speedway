@@ -2,7 +2,7 @@
 
 	/**
 	 * Google Maps
-	 *
+	 * 
 	 * @link http://snazzymaps.com/style/27/shift-worker
 	 */
 
@@ -87,17 +87,17 @@
 
 	SimpleMap.prototype.renderMap = function() {
         'use strict';
-		
+
 		if( ! _.isUndefined( this.elm ) ) {
 			this.map = new google.maps.Map( this.elm.get(0), this.mapOptions );
 		} else {
 			return false;
 		}
-		
+
 		//route or map?
-				
+
 		if (typeof route !== typeof undefined && route !== false) {
-		   			
+
 			var start = new google.maps.LatLng(28.694004, 77.110291);
 			var end = new google.maps.LatLng(28.72082, 77.107241);
 
@@ -108,57 +108,56 @@
 			route.provideRouteAlternatives = false;
 
 			var request = route;
-			
-			var directionsService = new google.maps.DirectionsService(); 
+
+			var directionsService = new google.maps.DirectionsService();
 			directionsService.route(request, function(response, status) {
 				if (status == google.maps.DirectionsStatus.OK) {
 					directionsDisplay.setDirections(response);
 				}
 			});
-		   
+
 		} else {
-			
+
 			this.addMarkers();
-			
+
 		}
-	
+
 		return this;
 	};
 
 	SimpleMap.prototype.addMarkers = function () {
         'use strict';
-		
+
 		// add all markers
 		$.each( this.mapOptions.markers, $.proxy( function ( i, val ) {
-			
+
 			var theMap = this.map;
-			
+
 			var geocoder = new google.maps.Geocoder();
-						
+
 			geocoder.geocode({'address': val.address}, function(results, status) {
-				
+
 				if (status === google.maps.GeocoderStatus.OK) {
-										
+
 					theMap.setCenter(results[0].geometry.location);
 					var marker = new google.maps.Marker({
 			        	map: theMap,
 			        	position: results[0].geometry.location,
 						title: val.title,
 			      	});
-					
+
 					if ( ! _( val.custompinimage).isEmpty() ) {
 						marker.setIcon( val.custompinimage );
 					}
-			    	
-				} else {
-					
-					alert('Geocode was not successful for the following reason: ' + status);
-			    
-				}	
-			});
-			
-			
-		}, this ) );
-		
-	};
 
+				} else {
+
+					alert('Geocode was not successful for the following reason: ' + status);
+
+				}
+			});
+
+
+		}, this ) );
+
+	};
