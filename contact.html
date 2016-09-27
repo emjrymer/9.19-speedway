@@ -22,7 +22,6 @@
 			"id": "1",
       "title": "Speedway",
 			"address": "1221 S Batesville Rd, Greer, SC 29650",
-      // "custompinimage": "images/favicon-square-w70.png"
 			"custompinimage": "images/map-marker.png"
 		}
 	]
@@ -118,8 +117,9 @@
 			</div>
 		</div>
 
-		<div class="map margin-bottom-60">
-			<div data-type="roadmap" data-zoom="7" data-markers='[{"id":"1","title":"Speedway","address": "1221 S Batesville Rd, Greer, SC 29650","custompinimage": "images/map-marker.png"}]' class="simple-map js-where-we-are"></div>
+		<div class="map margin-bottom-60 video-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1677876.82000689!2d-81.35750526910178!3d34.7781781126856!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc666b001e6b56b9d!2sSpeedway+Packaging+and+Distribution!5e0!3m2!1sen!2sus!4v1474942685823" width="2000" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+			<!-- <div data-type="roadmap" data-zoom="7" data-markers='[{"id":"1","title":"Speedway","address": "1221 S Batesville Rd, Greer, SC 29650","custompinimage": "images/map-marker.png"}]' class="simple-map js-where-we-are"></div> -->
 		</div>
 
 		<div class="container">
@@ -343,7 +343,7 @@
 	<script src="js/bootstrap/collapse.js"></script>
 	<script src="js/bootstrap/validator.js"></script>
 	<script src="js/underscore.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDu1LuDOK6FjvtW-FJTpjY4enDDET7T3ow&" type="text/javascript"></script>
+  <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
 	<script src="js/SimpleMap.js"></script>
 	<script src="js/custom.js"></script>
 
