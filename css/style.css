@@ -1414,7 +1414,7 @@ form .response.error { color: red; }
 
 .video-container {
     position: relative;
-    padding-bottom: 20%;
+    /*padding-bottom: 20%;*/
     /*padding-top: 1%;*/
     height: 380px;
     overflow: hidden;
